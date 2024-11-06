@@ -1,0 +1,55 @@
+@startuml GraficoDominio
+
+Class Edital {
+    +Integer numeroEdital
+    +Datetime dt_cadastro
+    +Integer Cadastrar()
+}
+
+Class Instituto {
+    +String nomeInstituto
+    +String endereco
+}
+
+Class Curso {
+    +String nomeCurso
+    +Cadastrar_Curso()
+}
+
+Class Pessoa {
+    +String cpf
+    +String Nome
+    +Cadastrar_Pessoa()
+}
+
+Class Coordenador {
+    +Integer CadastrarProjeto()
+}
+
+Class Bolsista {
+    +Categoria
+}
+
+Class Bolsa {
+    +Datetime dt_pagamento
+    +Float valor    
+}
+
+Class Projeto {
+    +Integer projetoId
+    +String titulo
+}
+
+
+Pessoa <|-- Coordenador
+Pessoa <|-- Bolsista
+
+Edital "1" *-- "0..*" Projeto
+Instituto "0..*" -- "0..*" Curso
+Projeto "1" *-- "1" Coordenador
+Curso "1" *-- "0..*" Bolsista
+Projeto "1" *-- "1..*" Bolsista
+Bolsista "1" *-- "0..*" Bolsa
+
+
+@enduml

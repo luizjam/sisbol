@@ -1,0 +1,95 @@
+@startuml DiagramaClasses
+
+Class Edital {
+    +Integer id
+    +String titulo
+    +String objeto
+    +Date publicacao
+    +String arquivo
+    +Salvar()
+    +Ler()
+    +Editar()
+    +Deletar()
+}
+
+Class Edital_Vagas {
+    +Integer id
+    +Integer editalId
+    +String modalidade
+    +Integer qtVagas
+    +Float valor
+    +Integer vigencia
+    +Salvar()
+    +Ler()
+    +Editar()
+    +Deletar()
+}
+
+Class Instituicao {
+    +Integer id
+    +String nome
+    +String logradouro
+    +String bairro
+    +String municipio
+    +String cidade
+    +String estado
+    +String cep
+    +Salvar()
+    +Ler()
+    +Editar()
+    +Deletar()
+}
+
+Class Pessoa {
+    +String cpf
+    +String nome
+    +String email
+    +Date datanasc
+}
+
+Class Administrador {
+    +validar_cadastro()
+    +atribuir_perfil()
+}
+
+Class Coordenador {
+    +cadastrar_projeto()
+    +cadastrar_bolsista()
+    +substituir_bolsista()
+}
+
+Class Projeto {
+    +Integer id
+    +String ProjetoNum
+    +String titulo
+    +Integer IntituicaoId
+    +Integer CoordenadorId
+}
+
+Class BolsistaProjeto {
+    +Integer id
+    +Integer projetoId
+    +String cpfBolsista
+}
+
+Class Bolsista {
+    +date dt_matricula
+    +Integer cursoId
+
+    +inserir_comprovante()
+
+}
+
+Class Curso {
+    +Integer id
+    +String nome
+    +String categoria
+
+}
+
+Class
+
+
+
+
+

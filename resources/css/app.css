@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+nav {
+    @apply bg-white dark:bg-gray-800 border-b border-gray-100 border-gray-700
+}
+
