@@ -45,11 +45,10 @@ Pessoa <|-- Coordenador
 Pessoa <|-- Bolsista
 
 Edital "1" *-- "0..*" Projeto
-Instituto "0..*" -- "0..*" Curso
+Instituto "1..*" -- "0..*" Curso
 Projeto "1" *-- "1" Coordenador
 Curso "1" *-- "0..*" Bolsista
 Projeto "1" *-- "1..*" Bolsista
 Bolsista "1" *-- "0..*" Bolsa
-
 
 @enduml

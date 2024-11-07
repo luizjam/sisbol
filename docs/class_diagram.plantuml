@@ -34,21 +34,24 @@ Class Instituicao {
     +String cidade
     +String estado
     +String cep
+    +Integer administradorId
     +Salvar()
     +Ler()
     +Editar()
     +Deletar()
 }
 
-Class Pessoa {
+Class Usuario {
     +String cpf
     +String nome
     +String email
+    +String Celular
     +Date datanasc
 }
 
 Class Administrador {
-    +validar_cadastro()
+    +cadastrar_instituicao()
+    +validar_cadastro_usuario()
     +atribuir_perfil()
 }
 
@@ -87,7 +90,19 @@ Class Curso {
 
 }
 
-Class
+Usuario <|-- Administrador
+Usuario <|-- Coordenador
+Usuario <|-- Bolsista
+
+Edital "1" *-- "1..*" Edital_Vagas
+Edital "1" *-- "0..*" Projeto
+Projeto "1" *-- "1" Coordenador
+Projeto "1" *-- "1..*" Bolsista
+Administrador "1" *-- "0..*" Instituicao
+Instituicao "*" -- "*" Curso
+Bolsista "1" *-- "1" Curso
+
+@enduml
 
 
 
